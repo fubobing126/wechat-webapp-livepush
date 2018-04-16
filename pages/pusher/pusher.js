@@ -21,12 +21,12 @@ Page({
   onReady: function (e) {
     // 使用 wx.createLivePusherContext 获取 live-pusher 上下文 LivePusherContext 
     this.livePusherCtx = wx.createLivePusherContext('myLive')
-    // this.livePusherCtx.setSrc('rtmp://video-center.alivecdn.com/live/c1536390ef7ee000ebb5d20b8c804648?vhost=stream1.niusee.cn')
+    
     this.livePusherCtx.start()
   },
   liveStart: function () {
     this.setData({
-      src: 'rtmp://video-center.alivecdn.com/live/c1536390ef7ee000ebb5d20b8c804648?vhost=stream1.niusee.cn',
+      src: 'url',
       name: '直播推流2',
       playStart: 'mode-hide',
       playStop: 'mode-show',
@@ -83,7 +83,6 @@ Page({
     })
   },
   selectMode: function(e) {
-    console.log('----',e.detail)
     this.setData({
       modeShow:'mode-hide'
     })
