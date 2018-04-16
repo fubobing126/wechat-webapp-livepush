@@ -1,0 +1,56 @@
+<view class="content">
+  <!-- <live-pusher id="myLive" url="{{src}}" mode="{{mode}}" beauty="{{beauty}}" whiteness="100" autopush bindstatechange="statechange" style="width: 300px; height: 225px;" bindtap="onReady" min-bitrate="{{minBitrate}}" max-bitrate="{{maxBitrate}}" /> -->
+  <live-pusher 
+    id="myLive"
+    autopush="true"
+    url="{{src}}" min-bitrate="200" max-bitrate="300" mode="{{mode}}"
+    bindstatechange="statechange" style="width: 100vw; height: 100vh;z-index:1">
+     <!-- <cover-view wx:if="{{isvip}}" class='welcome-info'>
+     
+      Welcome {{userInfo.nickName}} {{secret}}
+    </cover-view>  -->
+    <cover-view class="place_info">
+      <cover-view bindtap="switchoverMode" class="btnMode">{{modeTitle}}</cover-view>
+      <cover-view class='nav-tab'>
+        
+        <cover-view class="modeUL {{modeShow}}" bindtap="selectMode">
+            <cover-view class="modeSelect" bindtap="modeSD">标清</cover-view>
+            <cover-view class="modeSelect" bindtap="modeHD">高清</cover-view>
+            <cover-view class="modeSelect" bindtap="modeFHD">超清</cover-view>
+            <cover-view class="modeSelect" bindtap="modeRTC">自动</cover-view>
+        </cover-view>
+      </cover-view>
+      <!-- <cover-view class="place_info_parking">cover-view</cover-view>
+      <cover-view class="place_info_surplus">可覆盖在原生组件的组件</cover-view>
+      <cover-view class="place_info_order">66666</cover-view> -->
+      
+    </cover-view>
+    <cover-view class="playMode">
+      <cover-image class="playImg {{playStart}}" bindtap="liveStart" src="../img/play1.png"/>
+      <cover-image class="playImg {{playStop}}" bindtap="liveStop" src="../img/play2.png" />
+    </cover-view>
+  </live-pusher>
+  <!-- <view class="module">
+    <view class='nav-tab'>
+      <a bindtap="switchoverMode" class="btn">{{modeTitle}}</a>
+      <ul class="{{modeShow}}" bindtap="selectMode">
+          <li bindtap="modeSD"><a href="#">标清</a></li>
+          <li bindtap="modeHD"><a href="#">高清</a></li>
+          <li bindtap="modeFHD"><a href="#">超清</a></li>
+          <li bindtap="modeRTC"><a href="#">自动</a></li>
+      </ul>
+    </view> -->
+    <!-- <view class="playMode">
+      <image class="{{playStart}}" bindtap="liveStart" src="../img/play1.png"></image>
+      <image class="{{playStop}}" bindtap="liveStop" src="../img/play2.png"></image>
+    </view> -->
+    <!-- <view class="nav-play">
+      <button bindtap="liveStart">播放</button>
+      <button bindtap="liveStop">停止</button>
+       <button bindtap="livePause">暂停</button>
+      <button bindtap="liveResume">恢复</button>
+      <button bindtap="liveSwitchCamera">切换</button>
+      <button bindtap="liveSnapshot">快照</button> 
+    </view> -->
+  <!-- </view> -->
+</view>
